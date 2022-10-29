@@ -1,0 +1,27 @@
+
+<view class="all">
+  <view>
+    <view style="background-image: linear-gradient(#FF7200, #F98D35);">
+      <view class="titleone">{{item.title}}</view>
+      <!-- <view class="titleone">国务院关于支持山东深化新旧动能转换推动绿色低碳高质量发展的意见</view> -->
+      <view class="who">来源：<text style="font-size: 26rpx;font-weight: 300;">{{item.author}}</text></view>
+      <!-- <view class="who">发文字号：<text style="font-size: 26rpx;font-weight: 300;">国科发区 [2022]  18号</text></view> -->
+      <view style="text-align: center;padding-bottom: 20rpx;">
+        <i-icon type="unfold" size="20" color="#fff"></i-icon>
+      </view>
+    </view>
+    <view class="titletwo">{{item.title}}</view>
+    <!-- <view class="titletwo">国务院关于支持山东深化新旧动能转换推动绿色低碳高质量发展的意见</view> -->
+    <view class="time">{{item.time}}</view>
+    <!-- <view class="time">国科发区 [2022] 18号</view> -->
+    <view class="content">
+      <text>{{item.content}}</text>
+    </view>
+    <!-- <view class="content">各省、自治区、直辖市人民政府，国务院各部委、各直属机构:
+    山东是我国重要的工业基地和北方地区经济发展的战略支点。为支持山东在深化新旧动能转换基础上，着力探索转型发展之路，进一步增强区域发展活力动力，加快推动绿色低碳高质量发展,现提出如下意见。
+    </view> -->
+    <view style="width: 100%;padding-top: 30rpx;" wx:for="{{img}}" wx:key="index">
+      <image src="{{baseUrl + item}}" bindtap="img" style="position: relative;left:50%;transform: translate(-50%,0);" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>

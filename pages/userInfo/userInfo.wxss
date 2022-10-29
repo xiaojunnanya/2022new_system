@@ -1,0 +1,71 @@
+/* pages/userInfo/userInfo.wxss */
+.all{
+  background-color: #EDEDED;
+}
+
+.info{
+  background-color: #fff;
+  border-radius: 30rpx;
+  margin:20rpx;
+  /* height: 100rpx; */
+}
+
+.cells{
+  /* background-color: #fff; */
+  font-size: 40rpx;
+  border-radius: 30rpx;
+  padding: 10rpx;
+}
+
+.cell{
+  padding: 0 20rpx;
+  margin: 20rpx 0;
+  height: 100rpx;
+}
+
+.cell_title{
+  float: left;
+  width: 30%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.cell_input,.cell_radio,.cell_picker{
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 70%;
+}
+
+.picker{
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.cell_clear{
+  clear: both;
+  height: 2rpx;
+  background-color: #E6E6E6;
+  position: relative;
+  top: 15rpx;
+}
+
+.cell_view{
+  float: left;
+  height: 400rpx;
+  width: 70%;
+}
+
+.modify{
+  color: white;
+  display: inline-block;
+  width: 45% !important;
+  float: right;
+  transform: translate(-20rpx,-25rpx);
+}
+.sumbit{
+  color: white;
+  display: inline-block;
+  width: 45% !important;
+  transform: translate(20rpx,-25rpx);
+}

@@ -1,0 +1,36 @@
+
+<view>
+  <view>
+    <Logo></Logo>
+  </view>
+  <view>
+
+    <view wx:if="{{noLogin}}">
+      <view style="margin-top: 50rpx;">
+        <button bindtap="login" style="background-color: #ED6A00; color: white;">登录</button>
+      </view>
+    </view>
+  
+    <view wx:else="{{noLogin}}">
+
+      <i-card title="{{name}}" extra="专业：计算机类" thumb="{{imgUrl}}" full="true">
+        <view slot="content">欢迎您来到河北地质大学信息工程学院</view>
+      </i-card>
+
+      <view style="margin-top: 50rpx;">
+        <button disabled="{{disabled}}" type="primary" bindtap="scanCode" style="background-color:#ED6A00;">点击扫码</button>
+      </view>
+
+      <view style="margin-top: 50rpx;" class="buttonView">
+        <button type="primary" bindtap="clear" style="background-color:#ED6A00;">退出登录</button>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view>
+    <XGKX></XGKX>
+  </view>
+
+</view>

@@ -1,0 +1,34 @@
+.header{
+  height: 200rpx;
+  padding:40rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  background-color:#73ccd8 ;
+  color: white;
+}
+.title{
+  font-size: 52rpx;
+  font-weight: 700;
+  padding: 20rpx;
+}
+.header .info{
+font-size:28rpx ;
+padding: 20rpx;
+}
+.one{
+  height: 100rpx;
+    margin-top: 20rpx;
+    box-shadow: #77778a 0 0 5rpx;
+    border-radius: 10rpx;
+  }
+  .two{
+    /* border: solid 1rpx #73ccd8; */
+    margin-top: 150rpx;
+    width: 100%;
+    background-color: #73ccd8;
+    border-radius: 40rpx;
+    color: white;
+  }
+.input{
+  padding: 40rpx;
+}

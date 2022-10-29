@@ -1,0 +1,27 @@
+
+<view class="body">
+  <view>
+    <Logo></Logo>
+  </view>
+
+  <view>
+    <view class="title">2022级新生报到</view>
+  </view>
+  
+  <view>
+    <view class="prompt">注意：收集的信息仅为信息工程学院内部使用，不做其他用途</view>
+  </view>
+    
+  <view wx:if="{{showXgkx}}" style="text-align: center;">
+    <view>信工科协</view>
+  </view>
+  <view wx:else>
+    <button type="primary" bindtap="getUserInfo" style="background-color:#ED6A00;">信息采集</button>
+  </view>
+  
+
+  <view>
+    <XGKX></XGKX>
+  </view>
+  
+</view>

@@ -1,0 +1,207 @@
+<view wx:if="{{showXgkx}}">
+  信息工程学院学生科学技术协会是在信息工程学院领导下的群众性骨干组织，接受信息工程学院科技工作机构、共青团信息工程学院委员会和校科技处及学生科学技术协会的领导和指导。作为信息工程学院唯一具有学院特色的学生组织，积极组织学院同学参加科技活动，提高同学们的科技认知能力
+</view>
+
+
+<view class="all" wx:else>
+  <view>
+    <Logo></Logo>
+  </view>
+
+  <view class="info">
+    <view class="cells">
+      <!-- 姓名 -->
+      <view class="cell">
+        <view class="cell_title">姓名</view>
+        <input class="cell_input" type="text" disabled="{{true}}" value="{{name}}" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 性别 -->
+      <view class="cell">
+        <view class="cell_title">性别</view>
+        <radio-group class="cell_radio" bindchange="sexChange">
+          <radio checked="{{aboutSex}}" value="{{'男'}}"  disabled="{{Submitted}}">男</radio>
+          <radio checked="{{!aboutSex}}" value="{{'女'}}" style="padding-left: 20rpx;" disabled="{{Submitted}}">女</radio>
+        </radio-group>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 民族 -->
+      <view class="cell">
+        <view class="cell_title">民族</view>
+        <picker class="cell_picker" disabled="{{Submitted}}" bindchange="nationChange" value="{{nationIndex}}" range="{{nationArray}}" range-key="name"  bindchange="nationChange">
+          <view value='{{nationArray[nationIndex].name}}'>{{nationArray[nationIndex].name}}</view>
+        </picker>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 学号 -->
+      <view class="cell">
+        <view class="cell_title">学号</view>
+        <input class="cell_input" disabled="{{true}}" value="{{idcard}}" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 生源所在地 -->
+      <view class="cell" style="height: 150rpx;">
+        <view class="cell_title" style="font-size: 30rpx;height: 150rpx;line-height: 150rpx;">生源所在地</view>
+        <picker disabled="{{Submitted}}" style="height: 150rpx;line-height: 50rpx;font-size: 30rpx;" class="cell_picker" mode="region" bindchange="originChange">
+          <view class="picker">{{originPlace[0]}}</view>
+          <view class="picker">{{originPlace[1]}}</view>
+          <view class="picker">{{originPlace[2]}}</view>
+        </picker>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 籍贯 -->
+      <view class="cell" style="height: 150rpx;">
+        <view class="cell_title" style="height: 150rpx;line-height: 150rpx;">籍贯</view>
+        <picker disabled="{{Submitted}}" style="height: 150rpx;line-height: 50rpx;" class="cell_picker" mode="region" bindchange="nativeChange">
+          <view class="picker">{{nativePlace[0]}}</view>
+          <view class="picker">{{nativePlace[1]}}</view>
+          <view class="picker">{{nativePlace[2]}}</view>
+        </picker>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 户籍地址 -->
+      <view class="cell">
+        <view class="cell_title">户籍地址</view>
+        <input class="cell_input" type="text" disabled="{{Submitted}}" value="{{list.idhome}}" placeholder="与户口本地址一致" bindblur="idhomeChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 家庭住址 -->
+      <view class="cell">
+        <view class="cell_title">家庭住址</view>
+        <input class="cell_input" type="text" disabled="{{Submitted}}" value="{{list.home}}" placeholder="日常接收快递所用地址(详细地址)" style="font-size: 30rpx;" bindblur="homeChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 邮编 -->
+      <view class="cell">
+        <view class="cell_title">邮编</view>
+        <input class="cell_input" type="number" disabled="{{Submitted}}" value="{{list.postcode}}" maxlength="6" bindblur="postcodeChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 个人电话 -->
+      <view class="cell">
+        <view class="cell_title">个人电话</view>
+        <input class="cell_input" type="number" disabled="{{Submitted}}" value="{{list.phone}}" maxlength="11" bindblur="phoneChange" placeholder="必须是注册钉钉的手机号" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 政治面貌 -->
+      <view class="cell">
+        <view class="cell_title">政治面貌</view>
+          <radio-group class="cell_radio" bindchange="politicalChange">
+            <radio value="{{'共青团员'}}" checked="{{checkPolitical}}" style="padding-left: 20rpx;" disabled="{{Submitted}}">共青团员</radio>
+            <radio value="{{'群众'}}" checked="{{!checkPolitical}}" style="padding-left: 20rpx;" disabled="{{Submitted}}">群众</radio>
+          </radio-group>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 父亲姓名 -->
+      <view class="cell">
+        <view class="cell_title">父亲姓名</view>
+        <input class="cell_input" type="text" disabled="{{Submitted}}" value="{{list.fathername}}" placeholder="请输入姓名" maxlength="20" bindblur="fathernameChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 父亲电话 -->
+      <view class="cell">
+        <view class="cell_title">父亲电话</view>
+        <input class="cell_input" type="number" disabled="{{Submitted}}" value="{{list.fatherphone}}" maxlength="11" bindblur="fatherphoneChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 母亲姓名 -->
+      <view class="cell">
+        <view class="cell_title">母亲姓名</view>
+        <input class="cell_input" disabled="{{Submitted}}" type="text" value="{{mothername}}" maxlength="20" placeholder="请输入姓名" bindblur="mothernameChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 母亲电话 -->
+      <view class="cell">
+        <view class="cell_title">母亲电话</view>
+        <input class="cell_input" disabled="{{Submitted}}" type="number" value="{{motherphone}}" maxlength="11" bindblur="motherphoneChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- qq号 -->
+      <view class="cell">
+        <view class="cell_title" style="font-size: 36rpx;">本人QQ号</view>
+        <input class="cell_input" disabled="{{Submitted}}" type="text" value="{{list.qq}}" maxlength="20" bindblur="qqChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 微信号 -->
+      <view class="cell">
+        <view class="cell_title" style="font-size: 34rpx;">本人微信号</view>
+        <input class="cell_input" disabled="{{Submitted}}" type="text" value="{{list.wechat}}" maxlength="20" placeholder="非必填" bindblur="wechartChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 是否宗教信仰 -->
+      <view class="cell">
+        <view class="cell_title" style="font-size: 27rpx;text-align: center;">是否有宗教信仰</view>
+          <radio-group class="cell_radio" bindchange="religionChange">
+            <radio value="{{'是'}}" checked="{{checkReligion}}" style="padding-left: 20rpx;" disabled="{{Submitted}}">是</radio>
+            <radio value="{{'否'}}" checked="{{!checkReligion}}" style="padding-left: 20rpx;" disabled="{{Submitted}}">否</radio>
+          </radio-group>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 宗教名称 -->
+      <view class="cell" wx:if="{{displayReligion}}">
+        <view class="cell_title">宗教名称</view>
+        <input class="cell_input" type="text" disabled="{{Submitted}}" value="{{list.religionname}}" placeholder="没有信仰宗教则不填" bindblur="religionNameChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view>
+      <!-- 预计报到时间 -->
+      <!-- <view class="cell">
+        <view class="cell_title" style="font-size: 30rpx">预计报到时间</view>
+        <picker class="cell_picker" mode="date" value="{{arrivalTime}}" start="2022-09-01" end="2022-12-31" bindchange="arrivalChange">
+          <view class="picker">{{arrivalTime}}</view>
+        </picker>
+        <view class="cell_clear"></view>
+      </view> -->
+      <!-- 是否延期报到 -->
+      <!-- <view class="cell">
+        <view class="cell_title" style="font-size: 30rpx;text-align: center;">是否延期报到</view>
+          <radio-group class="cell_radio" bindchange="delayChange">
+            <radio value="{{'是'}}" style="padding-left: 20rpx;">是</radio>
+            <radio value="{{'否'}}" style="padding-left: 20rpx;">否</radio>
+          </radio-group>
+        <view class="cell_clear"></view>
+      </view> -->
+      <!-- 延期报道原因 -->
+      <!-- <view class="cell">
+        <view class="cell_title" style="font-size: 30rpx;">延期报道原因</view>
+        <input class="cell_input" type="text" placeholder="没有延期报到则不填" bindblur="delayreportChange" adjust-position/>
+        <view class="cell_clear"></view>
+      </view> -->
+      <!-- 交通工具 -->
+      <!-- <view class="cell" style="height: 200rpx;">
+        <view class="cell_title" style="line-height: 200rpx;">交通工具</view>
+        <checkbox-group class="cell_radio" bindchange="transportationChange" style="font-size: 28rpx;">
+          <checkbox value="{{'火车'}}" style="padding-left: 20rpx;">火车</checkbox>
+          <checkbox value="{{'高铁'}}" style="padding-left: 20rpx;">高铁</checkbox>
+          <checkbox value="{{'飞机'}}" style="padding-left: 20rpx;">飞机</checkbox>
+          <checkbox value="{{'步行'}}" style="padding-left: 20rpx;">步行</checkbox>
+          <checkbox value="{{'大巴'}}" style="padding-left: 20rpx;">大巴</checkbox>
+          <checkbox value="{{'私家车'}}" style="padding-left: 20rpx;">私家车</checkbox>
+        </checkbox-group>
+        <view class="cell_clear" style="top: 100rpx;"></view>
+      </view> -->
+
+      <!-- 证件照 -->
+      <view class="cell" style="height: 300rpx;">  
+        <view class="cell_title" style="display: inline-block;line-height: 300rpx;">
+          <text style="font-size: 30rpx;">个 人 证 件 照</text>
+        </view>
+        <view class="cell_view" style="display: inline-block;">
+          <view style="text-align: center;" bindtap="chooseImage" wx:if="{{displayImg}}">
+            <view style="line-height: 200rpx;">点击选择图片</view>
+            <view style="font-size: 30rpx;color: red;">(无美颜，不限底色)</view>
+          </view>
+          <image bindtap="chooseImage" src="{{src}}" style="display: block;height: 300rpx;width: 400rpx;padding:10rpx 0 0 10rpx;" wx:else mode="aspectFit"></image>
+        </view>
+      </view>
+      
+    </view> <!-- cells -->
+
+  </view>
+
+  <view>
+    <button hover-class="button" bindtap="submit" class="sumbit">提交信息</button>
+    <button hover-class="button" bindtap="modify" class="modify">修改提交信息</button>
+  </view>
+    
+    
+</view>

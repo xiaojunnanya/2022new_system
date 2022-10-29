@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/notice/notice",
+    "pages/index/index",
+    "pages/userInfo/userInfo",
+    "pages/report/report",
+    "pages/user/user",
+    "pages/binding/binding",
+    "pages/detailNotice/detailNotice",
+    "pages/teacher/teacher"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "信工在线答",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/notice/notice",
+        "text": "消息通知",
+        "iconPath": "/image/notice.png",
+        "selectedIconPath": "/image/_notice.png"
+      },
+      {
+        "pagePath": "pages/teacher/teacher",
+        "text": "名师风采",
+        "iconPath": "/image/teacher.png",
+        "selectedIconPath": "/image/_teacher.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "/image/self.png",
+        "selectedIconPath": "/image/_self.png"
+      }
+    ],
+    "selectedColor": "#000000",
+    "color": "#999"
+  },
+  "usingComponents": {
+    "Logo": "/components/logo/logo",
+    "XGKX": "/components/XGKX/XGKX",
+    "i-notice-bar": "/iViewUI/notice-bar/index",
+    "i-message": "/iViewUI/message/index",
+    "i-tabs": "/iViewUI/tabs/index",
+    "i-tab": "/iViewUI/tab/index",
+    "i-card": "/iViewUI/card/index",
+    "i-icon": "/iViewUI/icon/index"
+  }
+}

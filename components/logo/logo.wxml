@@ -1,0 +1,8 @@
+<view>
+    <view style="display: inline-block;margin-left: 10rpx;">
+      <image src="https://vip.jzab.xyz/static/front/school.png" style="width: 300rpx;height: 100rpx;" mode="aspectFit"></image>
+    </view>
+    <view style="display: inline-block;float: right;">
+      <image src="https://vip.jzab.xyz/static/front/LOGO.png" style="width: 300rpx;height: 100rpx;" mode="aspectFit"></image>
+    </view>
+  </view>

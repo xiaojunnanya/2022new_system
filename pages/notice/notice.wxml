@@ -1,0 +1,75 @@
+
+<view class="all">
+  <!-- 警告提示的占位 -->
+  <view>
+    <i-message id="message" />
+  </view>
+  
+  <view>
+    <Logo></Logo>
+  </view>
+  
+  <view>
+    <i-notice-bar color="red" backgroundcolor="#fff" >
+      <view style="width: 688rpx;color: #ED6A00;font-size: 32rpx;">
+        <text>欢迎您来到信息工程学院</text>
+        <text style="display: inline-block;position: absolute;right: 0;">您好，{{name}}</text>
+      </view>
+    </i-notice-bar>
+  </view>
+
+  <view style="margin-bottom: 40rpx;">
+      <swiper next-margin="50rpx" previous-margin="50rpx" circular="true" bindchange="swiperChange" autoplay="{{true}}" interval="3000">
+        <swiper-item wx:for="{{list}}" wx:key="index">
+          <view class="{{cur == index ? 'cur':''}}">
+            <image src="{{baseUrl + item}}" mode="scaleToFill"></image>
+          </view>
+        </swiper-item>
+      </swiper>
+  </view>
+
+  <!-- <view class="notice">
+    <view wx:for="{{info}}"  style="padding: 10rpx 100rpx 10rpx 30rpx;" wx:key="index" catchtap="notice" data-id="{{item.id}}" data-item="{{item.title}}" data-content="{{item.content}}" data-img="{{item.img}}" data-time="{{item.time}}" class="{{item.read == false ? 'red' : 'black'}}">
+      <view style="display: inline-block;" catchtap="notice" data-id="{{item.id}}" data-item="{{item.title}}" data-content="{{item.content}}"  data-img="{{item.img}}" data-time="{{item.time}}" class="{{ item.read == false ? 'red':'black' }}">{{item.title}}</view>
+      <view style="display: inline-block;float:right;" data-id="{{item.id}}" catchtap="notice" data-item="{{item.title}}" data-content="{{item.content}}" data-img="{{item.img}}" data-time="{{item.time}}" class="{{item.read == false ? 'red' : 'black'}}">{{item.time}} ></view>
+    </view>
+  </view> -->
+
+
+
+  <!-- <view>
+    <view style="height: 140rpx;width: 100%;padding: 0 20rpx;margin-bottom: 50rpx;position: relative;" wx:for="{{info}}"  wx:key="index" catchtap="notice" data-id="{{item.id}}" data-item="{{item.title}}" data-content="{{item.content}}" data-img="{{item.img}}" data-time="{{item.time}}" class="{{item.read == false ? 'red' : 'black'}}">
+      <view style="display: inline-block;margin-left: 20rpx;">
+        
+        <view style="margin-top: 10rpx;width: 400rpx;"  catchtap="notice" data-id="{{item.id}}" data-item="{{item.title}}" data-content="{{item.content}}" data-img="{{item.img}}" data-time="{{item.time}}" class="{{item.read == false ? 'red' : 'black'}}">
+        {{item.title}}
+        </view>
+        
+        <view style="position: absolute;bottom: 0;"  catchtap="notice" data-id="{{item.id}}" data-item="{{item.title}}" data-content="{{item.content}}" data-img="{{item.img}}" data-time="{{item.time}}" class="{{item.read == false ? 'red' : 'black'}}">
+          {{item.time}}
+        </view>
+      </view>
+      <view style="display: inline-block;position: absolute;right: 0;margin-right: 80rpx;" >
+        <image style="display: inline-block;" src="https://mmbiz.qpic.cn/mmbiz_jpg/4b2KhSlkApGAibQWsFghYxFxao0UkcZHPT5YDaDylSIQhbkEQia6GbQvm1rM9UARGMRKOAXDcSMeXnvpv3Rw3dJQ/640?wx_fmt=jpeg" mode="heightFix" style="height: 140rpx;" catchtap="notice" data-id="{{item.id}}" data-item="{{item.title}}" data-content="{{item.content}}" data-img="{{item.img}}" data-time="{{item.time}}" class="{{item.read == false ? 'red' : 'black'}}"></image>
+      </view>
+    </view>
+  </view> -->
+
+  <view class="notice">
+    <view class="aboutNotice">信息通知</view>
+    <view class="null"></view>
+    <view wx:for="{{info}}" wx:key="index" class="noticeInfo" catchtap="notice" data-item="{{item}}" class="{{item.read == false ? 'red' : 'black'}}">
+      <view style="font-size: 36rpx;letter-spacing: 5rpx;padding: 20rpx 0;" catchtap="notice" data-item="{{item}}" class="{{item.read == false ? 'red' : 'black'}}">{{item.title}}</view>
+      <view style="font-size: 28rpx;color: #ADABAC;">
+        <view style="display: inline-block;"  catchtap="notice" data-item="{{item}}" class="{{item.read == false ? 'red' : 'black'}}">{{item.time}}</view>
+      </view>
+      <view class="null"></view>
+    </view>
+  </view>
+
+
+  <view>
+    <XGKX></XGKX>
+  </view>
+
+</view>

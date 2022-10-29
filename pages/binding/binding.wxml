@@ -1,0 +1,30 @@
+<view wx:if="{{showXgkx}}">
+  信息工程学院学生科学技术协会是在信息工程学院领导下的群众性骨干组织，接受信息工程学院科技工作机构、共青团信息工程学院委员会和校科技处及学生科学技术协会的领导和指导。作为信息工程学院唯一具有学院特色的学生组织，积极组织学院同学参加科技活动，提高同学们的科技认知能力
+</view>
+
+
+
+<view wx:else>
+  <view>
+    <Logo></Logo>
+  </view>
+
+  <view>
+    <view  class="header">
+      <view class="title">登录</view>
+      <view class="info">请输入您的姓名和学号，与该微信号进行绑定</view>
+    </view>
+  </view>
+
+  <view>
+    <view class="input">
+      <view>
+        <input class="one" type="text" bindblur="yourname" placeholder="请输入姓名"/>
+        <input class="one" placeholder="请输入学号" bindblur="youridcard" type="number" maxlength="12"/>
+      </view>
+      <button class="two" bindtap="binding">登录绑定</button>
+    </view>
+  </view>
+
+  <view></view>
+</view>

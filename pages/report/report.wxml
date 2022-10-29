@@ -1,0 +1,25 @@
+<view wx:if="{{showXgkx}}">
+  信息工程学院学生科学技术协会是在信息工程学院领导下的群众性骨干组织，接受信息工程学院科技工作机构、共青团信息工程学院委员会和校科技处及学生科学技术协会的领导和指导。作为信息工程学院唯一具有学院特色的学生组织，积极组织学院同学参加科技活动，提高同学们的科技认知能力
+</view>
+
+
+<view wx:else>
+  <view>
+    <Logo></Logo>
+  </view>
+  <view>
+    <i-tabs current="{{ current }}" bindchange="handleChange">
+      <i-tab key="tab1" title="行程信息"></i-tab>
+      <i-tab key="tab2" title="防疫信息"></i-tab>
+    </i-tabs>
+  </view>
+  
+  <view wx:if="{{twoShow}}">
+    行程信息：包括报到日期，交通费收，车次航班、备注
+  </view>
+
+  <view wx:else>
+    关于防疫的，包括健康码，行程码，核酸证明
+  </view>
+
+</view>
